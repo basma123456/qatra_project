@@ -1,0 +1,42 @@
+@extends('marketer.layout')
+
+@section('title')
+    لوحة الإدارة -    اعادة تعيين كلمة المرور
+@endsection
+@section('css')
+@endsection
+@section('content')
+
+    <div class="row justify-content-center">
+        <div class="col-md-4 mt-5">
+            <div class="card">
+                <div class="card-body mt-4">
+
+                    <h4 class="mb-2">مرحبا بك في نظام التسويق  بقطرة</h4>
+                    <p class="mb-4">  اعادة تعيين كلمة المرور      </p>
+
+                    <form id="formAuthentication" class="mb-3" action="{{ route('marketer.reset_password_receive_code') }}" method="POST">
+                        @csrf
+                        @include("marketer.messages")
+                        <div class="mb-3">
+                            <label for="text" class="form-label"> الكود  </label>
+                            <input type="text" class="form-control" id="code" name="code"
+                                   placeholder=" ادخل الكود الظاهر لك بالايميل المرسل لك .... "   />
+                        </div>
+
+                        <input type="hidden" name="email" value="{{$email}}">
+
+                        <div class="mb-3">
+                            <button class="btn btn-primary d-grid w-100" type="submit">  تأكيد </button>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endsection
+@section('js')
+@endsection

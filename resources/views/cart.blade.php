@@ -1,0 +1,11 @@
+@extends("layouts.app")
+@section("title")
+@endsection
+@section("css")
+@endsection
+@section('skeleton')
+@endsection
+@section("content")
+@endsection
+@section("js")
+@endsection
